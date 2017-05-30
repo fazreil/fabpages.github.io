@@ -1,11 +1,11 @@
 {% include header.html %}
 
 ### This is Fazreil's website and it is under construction. 
-So f_ck off.
+this webpage will discuss mainly about stuff that I personally appreciate.
 
 I mean it.
 
-time now is: {{ site.time }}
+time now is: {{ site.time }}, I don't know what timezone that is to be honest.
 
 
 
@@ -16,4 +16,8 @@ time now is: {{ site.time }}
     </li>
   {% endfor %}
 </ul>
+
+
+
+
 
