@@ -11,6 +11,8 @@ time now is: {{ site.time }}, I don't know what timezone that is to be honest.
 </ul>
 s-->
 
+## Posts:
+
 {% for cat in site.posts %}
 ### {{ cat.category }}
 {% for post in site.posts %}
