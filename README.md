@@ -13,7 +13,7 @@ s-->
 <ul>
 	{% for post in site.posts %}
 	<li>{{ post.category }}</li>
-	{% category = post.category %}
+	{% def category = post.category %}
 	{% for post in site.posts %}
 		<ol>
 			{% if category == post.category %}
