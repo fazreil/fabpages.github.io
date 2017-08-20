@@ -1,5 +1,5 @@
 # This is Fazreil's website and it is under construction. 
-## Here's the deal: _this webpage will discuss mainly about stuff that I personally appreciate._
+### Here's the deal: _this webpage will discuss mainly about stuff that I personally appreciate._
 <!--
 time now is: {{ site.time }}, I don't know what timezone that is to be honest.
 -->
@@ -11,15 +11,15 @@ time now is: {{ site.time }}, I don't know what timezone that is to be honest.
 </ul>
 s-->
 
-	{% for cat in site.posts %}
-	### {{ cat.category }}
-		{% for post in site.posts %}
-			<ul>
-				{% if cat.category == post.category %}
-				<li>
-					<a href="{{ post.url }}">{{ post.title }}</a>
-				</li>
-				{% endif %}
-			<ol>
-		{% endfor %}
-	{% endfor %}	
+{% for cat in site.posts %}
+### {{ cat.category }}
+	{% for post in site.posts %}
+		<ul>
+			{% if cat.category == post.category %}
+			<li>
+				<a href="{{ post.url }}">{{ post.title }}</a>
+			</li>
+			{% endif %}
+		<ol>
+	{% endfor %}
+{% endfor %}	
