@@ -10,9 +10,9 @@ time now is: {{ site.time }}, I don't know what timezone that is to be honest.
 	{% endfor %}	
 </ul>
 s-->
-<ul>
+
 	{% for cat in site.posts %}
-	<li>{{ cat.category }}</li>
+	<a>{{ cat.category }}</a>
 	{% for post in site.posts %}
 		<ol>
 			{% if cat.category == post.category %}
@@ -23,7 +23,6 @@ s-->
 		<ol>
 	{% endfor %}
 	{% endfor %}	
-</ul>
 
 
 
