@@ -14,12 +14,12 @@ s-->
 {% for cat in site.posts %}
 ### {{ cat.category }}
 	{% for post in site.posts %}
-		<ul>
-			{% if cat.category == post.category %}
-			<li>
-				<a href="{{ post.url }}">{{ post.title }}</a>
-			</li>
-			{% endif %}
-		<ol>
+	<ul>
+		{% if cat.category == post.category %}
+		<li>
+			<a href="{{ post.url }}">{{ post.title }}</a>
+		</li>
+		{% endif %}
+	</ul>
 	{% endfor %}
 {% endfor %}	
