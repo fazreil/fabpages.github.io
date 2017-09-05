@@ -1,5 +1,5 @@
 ---
-title:  	"23:59:59.999 "
+title:  	"23:59:59.999 <-- this is not a timestamp"
 date:   	2017-09-04
 category: 	mantra
 tag:		[mantra, class]
