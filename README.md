@@ -14,16 +14,16 @@ s-->
 ## Posts:
 
 {% for cat in site.posts %}
-	{% if cat.category != "classified" %}
+{% if cat.category != "classified" %}
 ### {{ cat.category }}
-		{% for post in site.posts %}
-		<ul>
-			{% if cat.category == post.category %}
-			<li>
-				<a href="{{ post.url }}">{{ post.title }}</a>
-			</li>
-			{% endif %}
-		</ul>
-		{% endfor %}
-	{% endif %}
+{% for post in site.posts %}
+<ul>
+{% if cat.category == post.category %}
+	<li>
+	<a href="{{ post.url }}">{{ post.title }}</a>
+	</li>
+{% endif %}
+</ul>
+{% endfor %}
+{% endif %}
 {% endfor %}	
