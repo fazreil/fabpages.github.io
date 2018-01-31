@@ -17,13 +17,13 @@ s-->
 {% if cat.category != "classified" %}
 ### {{ cat.category }}
 {% for post in site.posts %}
-<ul>
 {% if cat.category == post.category %}
+<ul>
 	<li>
 	<a href="{{ post.url }}">{{ post.title }}</a>
 	</li>
-{% endif %}
 </ul>
+{% endif %}
 {% endfor %}
 {% endif %}
 {% endfor %}	
