@@ -14,7 +14,7 @@ s-->
 ## Posts:
 
 {% for cat in site.posts %}
-	{% if cat.category != "classified"%}
+	{% if cat.category != "classified" %}
 ### {{ cat.category }}
 		{% for post in site.posts %}
 		<ul>
