@@ -57,7 +57,7 @@ So this is what I'm scoring...
 
 Beautiful, sleek and very comfortable to use. Little did I know there was an issue with the touchpad. The cursor just don't move. It just don't work.
 
-ref: https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1887190
+ref: [launchpad](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1887190)
 
 ## Looking for fix
 
