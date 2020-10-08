@@ -55,41 +55,49 @@ So this is what I'm scoring...
 
 ![manjaro-desktop]({{"/assets/manjaro-desktop.png"}})
 
-Beautiful, sleek and very comfortable to use. Little did I know there was an issue with the touchpad. The cursor just don't move. It just don't work. :disappointed:
+Beautiful, sleek and very comfortable to use. Little did I know there was an issue with the touchpad. The cursor just don't move. It just don't work.
 
 ref: https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1887190
 
 ## Looking for fix
 
-The webpage above actually provide a solution for the issue. But I need to build the patched kernel myself. I've never build a kernel to be honest (despite being a senior build engineer, this is embarassing :expressionless:). The patch isn't going to be merged into the official build anytime soon because it will break other touchpads.
+The webpage above actually provide a solution for the issue. But I need to build the patched kernel myself. I've never build a kernel to be honest (despite being a senior build engineer, this is embarassing). The patch isn't going to be merged into the official build anytime soon because it will break other touchpads.
 
-ref: https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1887190/comments/179
+ref: [launchpad](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1887190/comments/179)
 
 ## Building new kernel with patched driver
 
-I followed this step:
-https://medium.com/@evintheair/building-a-custom-kernel-in-manjaro-linux-186da6a1cedf
+I followed this [step](https://medium.com/@evintheair/building-a-custom-kernel-in-manjaro-linux-186da6a1cedf).
 
 Here is the rundown of what I did that night:
 
 1. Download linux58 package<br/>
-`wget https://gitlab.manjaro.org/packages/core/linux58/-/archive/master/linux58-master.tar.gz`
+``wget https://gitlab.manjaro.org/packages/core/linux58/-/archive/master/linux58-master.tar.gz``
+
 1. Extract it to my checkout directory<br/>
-`tar xvzf linux58-master.tar.gz`
+``tar xvzf linux58-master.tar.gz``
+
 1. change directory to the extracted <br/>
-`cd linux58-master`
+``cd linux58-master``
+
 1. download patch for Legion 5 touchpad <br/>
-`wget https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1887190/+attachment/5418465/+files/0303-pinctrl-amd2.patch`
+``wget https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1887190/+attachment/5418465/+files/0303-pinctrl-amd2.patch``
+
 1. Copy the file over to the extracted linux58 <br/>
-`cp ~/Downloads/0303-pinctrl-amd2.patch .`
+``cp ~/Downloads/0303-pinctrl-amd2.patch .``
+
 1. Update checksums <br/>
-`updpkgsums`
+``updpkgsums``
+
 1. While making the package, I got this error:<br/>
-`==> ERROR: Cannot find the fakeroot binary required for building as non-root user.`
+``==> ERROR: Cannot find the fakeroot binary required for building as non-root user.``
+
 1. This can be solved by installing base-devel <br/>
-`sudo pacman -S base-devel`
+``sudo pacman -S base-devel``
+
 1. The package brings fakeroot, now let's make the package <br/>
-`makepkg -s`
+``makepkg -s``
+
 1. Now let the system compile and make the new kernel package, together with the headers
 
 ### What was that patch about
@@ -126,9 +134,9 @@ Ok, after 10 minutes or so, the build completed successfully
 
 The suspense is mounting. So far my personal achievement when dealing with kernel...
 
-Install new kernel: :heavy_check_mark:<br/>
-Build new kernel: :thumbsup: <br/>
-Install newly built own kernel :question:
+Install new kernel: checked<br/>
+Build new kernel: checked<br/>
+Install newly built own kernel: ?
 
 Time to install the newly built kernel
 
@@ -248,7 +256,6 @@ Next, I kept faith in all kernel developers and reboot the machine. Praise to go
 
 More interestingly the touchpad now works!
 
-Now I can unplug my laptop and carry it around
- without carrying mouse with me.
+Now I can unplug my laptop and carry it around without carrying mouse with me.
 
-p.s. I could use [i3](https://en.wikipedia.org/wiki/I3_(window_manager) but when it comes to browsing on firefox, I really need the touchpad.
+p.s. I could use [i3](https://i3wm.org/) but when it comes to browsing on firefox, I really need the touchpad.
